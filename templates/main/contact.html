@@ -1,0 +1,368 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sunrise construction & Builder </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="description" content="SunRise construction & Builder company">
+  <meta name="keywords" content="construction, html, template, responsive, corporate">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Fav Icon -->
+  <link rel="shortcut icon" href="images/rasm_2.jpg">
+  <!-- Style CSS -->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'dist/color-default.css' %}">
+  <link rel="stylesheet" href="{% static 'dist/color-switcher.css' %}">
+  <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+  <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+  <link href="{% static 'css/owl.css' %}" rel="stylesheet">
+  <link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style_slider.css' %}" rel="stylesheet">
+  <link href="{% static 'rs-plugin/css/settings.css' %}" rel="stylesheet">
+
+  <style>
+    .dropdown_lang form {
+      background-color: white;
+      transition: all .5s;
+    }
+    .dropdown_lang form button {
+      background-color: transparent;
+      padding: 3px 15px;
+    }
+
+    .dropdown_lang form:hover {
+      background-color: #fdc716;
+    } 
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!--preloader start-->
+    <div class="preloader"></div>
+    <!--preloader end-->
+
+    <!--main-header start-->
+    <header class="main-header">
+      <!--header-top start-->
+      <div class="header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-6">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--header-top end-->
+
+      <!--header-lower start-->
+      <div class="header-lower" style="background: white; ">
+        <div class="container nav-container">
+          <div class="d-flex justify-content-between">
+            <div class="nav-brand">
+              <div class="logo-outer">
+                <div class="logo"> <a href="{% url 'index' %}"> <img style="width: 207px;" class="logo-default"
+                      src="{% static 'images/Frame 5.png' %}" alt="" title=""> </a> </div>
+              </div>
+            </div>
+            <div class="w-auto nav-links">
+              <div class="nav-outer clearfix menu-bg">
+                <!--main-menu start-->
+                <nav class="main-menu">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="navbar-collapse collapse clearfix">
+                    <ul class="navigation clearfix" style="background: white !important;">
+                      <li class="current">
+                        <a class="hvr-link main-link" href="{% url 'index' %}">{% trans "Asosiy" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'about' %}">{% trans "Biz haqimizda" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'automation' %}">{% trans "Avtomatlashtirish" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'shop' %}">{% trans "Marketing"  %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'service' %}">{% trans "Services" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'partners' %}">{% trans "Hamkorlar" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'contact' %}">{% trans "Contact" %}</a>
+                      </li>
+                      <li class="dropdown">
+                        <a class="hvr-link main-link" href="#">{% trans "Til" %}</a>
+                        <ul class="dropdown_lang">
+                          <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="uz" name="language">
+                            <button type="submit">O'zbekcha</button>
+                        </form>
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="en" name="language">
+                            <button type="submit">English</button>
+                        </form>
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="ru" name="language">
+                            <button type="submit">Русский</button>
+                        </form>
+                          </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </nav>
+                <!--main-menu end-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--header-lower end-->
+
+      <!--sticky-header start-->
+      <div class="sticky-header" style="background: white;">
+        <div class="container nav-container">
+          <div class="d-flex justify-content-between">
+            <div class="nav-brand">
+              <div class="logo-outer">
+                <div class="logo"> <a href="{% url 'index' %}"> <img style="width: 207px;" class="logo-default"
+                      src="{% static 'images/Frame 5.png' %}" alt="" title=""> </a> </div>
+              </div>
+            </div>
+            <div class="w-auto nav-links">
+              <div class="nav-outer clearfix menu-bg">
+                <!--main-menu start-->
+                <nav class="main-menu">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="navbar-collapse collapse clearfix">
+                    <ul class="navigation clearfix" style="background: white !important;">
+                      <li class="current">
+                        <a class="hvr-link main-link" href="{% url 'index' %}">{% trans "Asosiy" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'about' %}">{% trans "Biz haqimizda" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'automation' %}">{% trans "Avtomatlashtirish" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'shop' %}">{% trans "Marketing" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'service' %}">{% trans "Services" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'partners' %}">{% trans "Hamkorlar" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'contact' %}">{% trans "Contact" %}</a>
+                      </li>
+                      <li class="dropdown">
+                        <a class="hvr-link main-link" href="#">{% trans "Til" %}</a>
+                        <ul class="dropdown_lang">
+                          <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="uz" name="language">
+                            <button type="submit">O'zbekcha</button>
+                        </form>
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="en" name="language">
+                            <button type="submit">English</button>
+                        </form>
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="ru" name="language">
+                            <button type="submit">Русский</button>
+                        </form>
+                          </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </nav>
+                <!--main-menu end-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--sticky-header end-->
+    </header>
+    <!--main-header end-->
+
+    <!--inner-heading start-->
+    <section class="inner-heading" style="background: url({% static 'images/elbim/backTop.jpg' %})">
+      <div class="container">
+        <h1>{% trans "Contact" %}</h1>
+        <ul class="xs-breadcumb">
+          <li><a href="{% url 'index' %}"> {% trans 'Asosiy' %} / </a>{% trans "Contact" %}</li>
+        </ul>
+      </div>
+    </section>
+    <!--inner-heading end-->
+
+    <!--inner content start-->
+    <section class="contactWrap">
+      <div class="container">
+        
+        <!--row start-->
+        <div class="row serviceList">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="contact-item">
+              <div class="fig_caption">
+                <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i> </div>
+                <div class="details">
+                  <h3>{% trans "Bizning manzil" %}</h3>
+                  <p>{% trans "100005, Fergana yoli str. 222/4 Tashkent/<b>Uzbekiston" %}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="contact-item">
+              <div class="fig_caption">
+                <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i> </div>
+                <div class="details">
+                  <h3>{% trans "Mail" %}</h3>
+                  <p style="margin-top: 10px;">info@elbimeliktronik.uz</p>
+                  <p>elbimtashkent@elbimeliktronik.uz</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="contact-item">
+              <div class="fig_caption">
+                <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i> </div>
+                <div class="details">
+                  <h3>{% trans "Contact" %}</h3>
+                  <p>
+                    +998935550655
+                    +998935551354
+                    +998935551350
+                    +998935551351
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="contact-item">
+              <div class="fig_caption">
+                <div class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i> </div>
+                <div class="details">
+                  <h3>{% trans "Ish vaqti" %}</h3>
+                  <p>09:00 - 18:00</p>
+                  <p>{% trans "Dushanba - Juma" %}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--row end-->
+      </div>
+    </section>
+    <!--inner content end-->
+
+    <div class="xs-map-sec">
+      <div class="xs-maps-wraper">
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d878.5144516575855!2d69.30498086534344!3d41.28269952281399!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE2JzU3LjkiTiA2OcKwMTgnMTcuNSJF!5e1!3m2!1sru!2s!4v1733904440877!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!--footer-sec start-->
+    <footer class="footer-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-12">
+            <div class="footer-info">
+              <div class="footer-logo"> <a href="{% url 'index' %}"><img class="footer-logo-default" src="{% static 'images/Frame 5.png' %}"
+                    alt=""> </a> </div>
+              <p>{% trans "Bizning vazifamiz - yuqori sifatli mahsulot va xizmatlarni arzon narxlarda taklif qilish orqali mijozlarning ishonchini eng yuqori darajada saqlashdir." %}</p>
+              <ul class="footer-social">
+                <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-vimeo-square" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6 col-sm-6" style="display: flex; justify-content: center;">
+                <div class="footer-info">
+                  <h3 class="footer-title">{% trans "Bo'limlar" %}</h3>
+                  <ul class="service-link">
+                    <li> <a href="{% url 'index' %}">{% trans "Asosiy" %}</a> </li>
+                    <li> <a href="{% url 'about' %}">{% trans "Biz haqimizda" %}</a> </li>
+                    <li> <a href="{% url 'automation' %}">{% trans "Avtomatlashtirish" %}</a> </li>
+                    <li> <a href="{% url 'service' %}">{% trans "Services" %}</a> </li>
+                    <li> <a href="{% url 'partners' %}">{% trans "Hamkorlar" %}</a> </li>
+                    <li> <a href="{% url 'shop' %}">{% trans "Marketing" %}</a> </li>
+                    <li> <a href="{% url 'contact' %}">{% trans "Contact" %}</a> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="footer-info">
+                  <h3 class="footer-title">{% trans "Contact" %}</h3>
+                  <ul class="footer-adress">
+                    <li><i class="fa fa-map-marker"></i><span>{% trans "100005, Fergana yoli str. 222/4 Tashkent/<b>Uzbekiston" %}</b></span></li>
+                    <li><i class="fa fa-phone"></i><span>{% trans "Tel: +99878 120 31 72" %}</span></li>
+                    <li><i class="fa fa-envelope-o"></i><span>{% trans "Email: erdem@elbimenergy.com" %}</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    
+    </footer>
+    <!--footer-secn end-->
+  </div>
+  <!--scroll-to-top start-->
+  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-up"></span></div>
+  <!--scroll-to-top end-->
+
+  <!--jquery start-->
+  <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox8cbb.js?v=2.1.5' %}"></script>
+  <script src="{% static 'js/owl.carousel.js' %}"></script>
+  <script src="{% static 'rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
+  <script src="{% static 'rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+  <script src="{% static 'js/counter.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+  <!--jquery end-->
+</body>
+
+</html>

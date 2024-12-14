@@ -1,0 +1,476 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>avtomatlashtirish</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="description" content="SunRise construction & Builder company">
+  <meta name="keywords" content="construction, html, template, responsive, corporate">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Fav Icon -->
+  <link rel="shortcut icon" href="images/rasm_2.jpg">
+  <!-- Style CSS -->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="dist/color-default.css' %}">
+  <link rel="stylesheet" href="dist/color-switcher.css' %}">
+  <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+  <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+  <link href="{% static 'css/owl.css' %}" rel="stylesheet">
+  <link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style_slider.css' %}" rel="stylesheet">
+  <link href="{% static 'rs-plugin/css/settings.css' %}" rel="stylesheet">
+
+
+  <style>
+    .dropdown_lang form {
+      background-color: white;
+      transition: all .5s;
+    }
+
+    .dropdown_lang form button {
+      background-color: transparent;
+      padding: 3px 15px;
+    }
+
+    .dropdown_lang form:hover {
+      background-color: #fdc716;
+    }
+
+    .shop__box {
+      height: 300px;
+    }
+
+    .shop__box h3 {
+      text-align: center;
+    }
+
+    .shop__card {
+      height: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!--preloader start-->
+    <div class="preloader"></div>
+    <!--preloader end-->
+
+    <!--main-header start-->
+    <header class="main-header">
+      <!--header-top start-->
+      <div class="header-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-6">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--header-top end-->
+
+      <!--header-lower start-->
+      <div class="header-lower" style="background: white; ">
+        <div class="container nav-container">
+          <div class="d-flex justify-content-between">
+            <div class="nav-brand">
+              <div class="logo-outer">
+                <div class="logo"> <a href="{% url 'index' %}"> <img style="width: 207px;" class="logo-default"
+                      src="{% static 'images/Frame 5.png' %}" alt="" title=""> </a> </div>
+              </div>
+            </div>
+            <div class="w-auto nav-links">
+              <div class="nav-outer clearfix menu-bg">
+                <!--main-menu start-->
+                <nav class="main-menu">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="navbar-collapse collapse clearfix">
+                    <ul class="navigation clearfix" style="background: white !important;">
+                      <li class="current">
+                        <a class="hvr-link main-link" href="{% url 'index' %}">{% trans "Asosiy" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'about' %}">{% trans "Biz haqimizda" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'automation' %}">{% trans "Avtomatlashtirish" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'shop' %}">{% trans "Marketing" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'service' %}">{% trans "Services" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'partners' %}">{% trans "Hamkorlar" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'contact' %}">{% trans "Contact" %}</a>
+                      </li>
+                      <li class="dropdown">
+                        <a class="hvr-link main-link" href="#">{% trans "Til" %}</a>
+                        <ul class="dropdown_lang">
+                          <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="uz" name="language">
+                            <button type="submit">O'zbekcha</button>
+                          </form>
+                          <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="en" name="language">
+                            <button type="submit">English</button>
+                          </form>
+                          <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="ru" name="language">
+                            <button type="submit">Русский</button>
+                          </form>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </nav>
+                <!--main-menu end-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--header-lower end-->
+
+      <!--sticky-header start-->
+      <div class="sticky-header" style="background: white;">
+        <div class="container nav-container">
+          <div class="d-flex justify-content-between">
+            <div class="nav-brand">
+              <div class="logo-outer">
+                <div class="logo"> <a href="{% url 'index' %}"> <img style="width: 207px;" class="logo-default"
+                      src="{% static 'images/Frame 5.png' %}" alt="" title=""> </a> </div>
+              </div>
+            </div>
+            <div class="w-auto nav-links">
+              <div class="nav-outer clearfix menu-bg">
+                <!--main-menu start-->
+                <nav class="main-menu">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                  </div>
+                  <div class="navbar-collapse collapse clearfix">
+                    <ul class="navigation clearfix" style="background: white !important;">
+                      <li class="current">
+                        <a class="hvr-link main-link" href="{% url 'index' %}">{% trans "Asosiy" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'about' %}">{% trans "Biz haqimizda" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'automation' %}">{% trans "Avtomatlashtirish" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'shop' %}">{% trans "Marketing" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'service' %}">{% trans "Services" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'partners' %}">{% trans "Hamkorlar" %}</a>
+                      </li>
+                      <li>
+                        <a class="hvr-link main-link" href="{% url 'contact' %}">{% trans "Contact" %}</a>
+                      </li>
+                      <li class="dropdown">
+                        <a class="hvr-link main-link" href="#">{% trans "Til" %}</a>
+                        <ul class="dropdown_lang">
+                          <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="uz" name="language">
+                            <button type="submit">O'zbekcha</button>
+                          </form>
+                          <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="en" name="language">
+                            <button type="submit">English</button>
+                          </form>
+                          <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="ru" name="language">
+                            <button type="submit">Русский</button>
+                          </form>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </nav>
+                <!--main-menu end-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--sticky-header end-->
+    </header>
+    <!--main-header end-->
+
+    <section class="inner-heading" style="background: url({% static 'images/elbim/backTop.jpg' %})">
+      <div class="container">
+        <h1>{% trans "Avtomatlashtirish" %}</h1>
+        <ul class="xs-breadcumb">
+          <li><a href="{% url 'index' %}">{% trans "Asosiy" %} / </a> {% trans "Avtomatlashtirish" %}</li>
+        </ul>
+      </div>
+    </section>
+
+    <!--Automatlashtirish start-->
+    <section class="services bg-gray">
+      <div class="container">
+        <div class="section-title">
+          <h3><span>{% trans "AVTOMATLASHTIRISH" %}</span></h3>
+          <p>{% trans "Tashkilotimiz turli sohalarda sanoatni avtomatlashtirish uchun dasturlarni ishlab chiqarish orqali mijozlarga; PLC - HMI - SCADA -MOTION - DRIVE - DRIVE - DATA PROCESSING yo'nalishlari bo'yicha, muhandislik, dasturiy ta'minot, o'rnatish, yetkazib berish, modernizatsiya xizmatlarini zamonaviy texnologiyalar va tejamkor yechimlar yordamida taklif etadi." %}</p>
+        </div>
+        <div class="d-flex serviceList">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="single-item">
+              <div class="fig_caption">
+                <div class="icon">
+                  <svg fill="#fcb80b" width="50" viewBox="0 0 56 56" id="Layer_1" version="1.1" xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g>
+                      <path
+                        d="M48.2,25.3c-0.3-0.2-0.8-0.1-1.1,0.1l-7.7,6.1v-5.8c0-0.4-0.2-0.7-0.5-0.9c-0.3-0.2-0.7-0.1-1,0.1l-9.4,6.8L28,25.4   c0-0.3-0.2-0.7-0.5-0.8c-0.3-0.2-0.7-0.1-1,0l-11.3,6.8v-9.2c0.7-0.4,1.3-0.9,1.7-1.6c0.5,0.2,1.1,0.2,1.7,0.2c2.2,0,4.1-1.2,5.1-3   c0.3,0,0.6,0.1,1,0.1c4.1,0,7.4-3.3,7.4-7.4c0-4.1-3.3-7.5-7.4-7.5c-3.7,0-6.7,2.6-7.3,6.2c-2.6,0.5-4.5,2.7-4.7,5.4   c-1.9,0.3-3.4,2-3.4,4c0,0.1,0,0.2,0,0.2h-1c-0.6,0-1,0.4-1,1V52c0,0.6,0.4,1,1,1h39.5c0.6,0,1-0.4,1-1V26.2   C48.7,25.8,48.5,25.5,48.2,25.3z M11.3,18.6c0-1.2,0.9-2.1,2.1-2.1c0.1,0,0.2,0,0.3,0c0.3,0,0.6-0.1,0.8-0.3   c0.2-0.2,0.3-0.5,0.3-0.8c0-0.2,0-0.3,0-0.5c0-2,1.6-3.8,3.6-3.9c0.5,0,0.9-0.4,0.9-0.9C19.4,7.2,21.8,5,24.7,5   c3,0,5.4,2.4,5.4,5.5c0,3-2.4,5.4-5.4,5.4c-0.4,0-0.9-0.1-1.3-0.2c-0.5-0.1-1,0.1-1.2,0.6c-0.6,1.5-2,2.5-3.6,2.5   c-0.6,0-1.2-0.1-1.8-0.4c-0.3-0.1-0.6-0.1-0.9,0c-0.3,0.1-0.5,0.4-0.6,0.7c0,0.2-0.1,0.4-0.2,0.6c-0.1-0.5-0.5-0.8-1-0.8h-2.9   C11.3,18.8,11.3,18.7,11.3,18.6z M10.5,20.8C10.5,20.8,10.5,20.8,10.5,20.8h2.7v1.6H9.3v-1.6H10.5z M46.7,51H9.3V24.5h3.9v8.7   c0,0.4,0.2,0.7,0.5,0.9c0.3,0.2,0.7,0.2,1,0l11.4-6.8l0.5,6.4c0,0.4,0.2,0.7,0.6,0.8c0.3,0.2,0.7,0.1,1-0.1l9.3-6.7v5.9   c0,0.4,0.2,0.7,0.6,0.9c0.3,0.2,0.8,0.1,1.1-0.1l7.7-6.1V51z" />
+                      <path
+                        d="M40.3,48h4.3c0.6,0,1-0.4,1-1v-4.3c0-0.6-0.4-1-1-1h-4.3c-0.6,0-1,0.4-1,1V47C39.3,47.6,39.7,48,40.3,48z M41.3,43.7h2.3   V46h-2.3V43.7z" />
+                      <path
+                        d="M27.7,41.7h-4.3c-0.6,0-1,0.4-1,1V47c0,0.6,0.4,1,1,1h4.3c0.6,0,1-0.4,1-1v-4.3C28.7,42.2,28.2,41.7,27.7,41.7z M26.7,46   h-2.3v-2.3h2.3V46z" />
+                      <path
+                        d="M19.3,36.3h-4.3c-0.6,0-1,0.4-1,1v4.3c0,0.6,0.4,1,1,1h4.3c0.6,0,1-0.4,1-1v-4.3C20.3,36.8,19.8,36.3,19.3,36.3z    M18.3,40.7h-2.3v-2.3h2.3V40.7z" />
+                      <path
+                        d="M36.1,36.3h-4.3c-0.6,0-1,0.4-1,1v4.3c0,0.6,0.4,1,1,1h4.3c0.6,0,1-0.4,1-1v-4.3C37.1,36.8,36.7,36.3,36.1,36.3z    M35.1,40.7h-2.3v-2.3h2.3V40.7z" />
+                    </g>
+                  </svg>
+                </div>
+                <div class="details">
+                  <h3><a href="service-signle.html">{% trans "Ishlab Chiqarishni Avtomatlashtirish" %}</a></h3>
+                  <!-- <p>{% trans "Avtomatlashtirish — bu jarayonlarni optimallashtirish va samaradorligini oshirish maqsadida texnologik uskunalar va dasturiy ta'minotdan foydalanishdir." %}</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="single-item">
+              <div class="fig_caption">
+                <div class="icon">
+                  <img src="{% static 'fonts/avtomatic.svg' %}" alt="svg">
+                </div>
+                <div class="details">
+                  <h3><a href="service-signle.html">{% trans "Sanoat Dastgohlarni Avtomatlashtirish" %}</a></h3>
+                  <!-- <p>{% trans "Avtomatlashtirish — jarayonlarini yanada samarali, tez va xatolarsiz amalga oshirish maqsadida dastgohlarni zamonaviy texnologiyalar va tizimlar yordamida avtomatik boshqarish jarayonidir." %}</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="single-item">
+              <div class="fig_caption">
+                <div class="icon"> <img src="{% static 'fonts/data-processing.svg' %}" alt="svg"> </div>
+                <div class="details">
+                  <h3><a href="service-signle.html">{% trans "Ma'lumotlarni Qayta Ishlashni Avtomatlashtirish" %}</a>
+                  </h3>
+                  <!-- <p>{% trans "Bu ishlab chiqarish va xizmat ko'rsatish jarayonlarini yanada samarali va yuqori sifatli qilish maqsadida texnologiyalar va avtomatik tizimlardan foydalanishdir." %}</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="single-item">
+              <div class="fig_caption">
+                <div class="icon"><img src="{% static 'fonts/production.svg' %}" alt=""></div>
+                <div class="details">
+                  <h3><a href="service-signle.html">{% trans "Texnologik Jarayonlarni Avtomatlashtirish" %}</a></h3>
+                  <!-- <p>{% trans "Bu energiya ishlab chiqarish, tarqatish va iste'mol jarayonlarini yanada samarali va xavfsiz boshqarish maqsadida zamonaviy texnologiyalar va avtomatizatsiya tizimlaridan foydalanish jarayonidir." %}</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="single-item">
+              <div class="fig_caption">
+                <div class="icon"><img src="{% static 'fonts/energy.svg' %}" alt="svg"></div>
+                <div class="details">
+                  <h3><a href="service-signle.html">{% trans "Energetik Tizimlarni Avtomatlashtirish" %}</a></h3>
+                  <!-- <p>{% trans "Ishlashni avtomatlashtirish — bu ma'lumotlarni yig'ish, tahlil qilish, saqlash va tarqatishni avtomatik ravishda amalga oshirish jarayonidir." %}</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Automatlashtirish end-->
+
+    <!-- Shop start -->
+    <section class="shop">
+      <div class="container">
+        <div class="section-title shop__title">
+          <h3><span>{% trans "Texnologik Yechimlar" %}</span></h3>
+          <p>{% trans "Biz to'qimachilik va yengil sanoat, neft-gaz sanoati, ko'mir sanoati, kon metalurgiya sanoati kabi sohalarda jarayonlarni avtomatlashtirish bo'yicha texnologik yechimlarini taklif etamiz. Avtomatlashtirilgan nazorati tizimlarini ta'mirlash harorat, bosim, o'tkazuvchanlik, PH, CO2 kabi texnologik parametrlarni o'lchash, monitoring qilish, ma'lumotlarni saqlash va hisobot qilish kabi xizmatlarni taqdim qilamiz." %}</p>
+        </div>
+        <div class="d-flex shop__list">
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop1.webp' %});">
+              <!-- <h3>{% trans "Ip Yigiriuv Fabrikasi" %}</h3> -->
+            </div>
+            <h3>{% trans "Ip Yigiriuv Fabrikalari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop2.webp' %});">
+              <!-- <h3>{% trans "Bug' Qozonlari" %}</h3> -->
+            </div>
+            <h3>{% trans "Bug' Qozonlari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop3.webp' %});">
+              <!-- <h3>{% trans "Ip Yigiriuv Fabrikasi" %}</h3> -->
+            </div>
+            <h3>{% trans "To'qimachilik bo'ycha sexlari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop4.webp' %});">
+              <!-- <h3>{% trans "Ip Yigiriuv Fabrikasi" %}</h3> -->
+            </div>
+            <h3>{% trans "Tozalash Inshootlari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop5.webp' %});">
+              <!-- <h3>{% trans "Ip Yigiriuv Fabrikasi" %}</h3> -->
+            </div>
+            <h3>{% trans "Qog'oz Fabrikalari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/f.jpg' %});">
+            </div>
+            <h3>{% trans "Sement zavodlari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop7.webp' %});">
+            </div>
+            <h3>{% trans "Asfalt-beton zavodlari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop8.webp' %});">
+            </div>
+            <h3>{% trans "Oziq-ovqat qadoqlash va o'lchash tizimlari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop9.webp' %});">
+            </div>
+            <h3>{% trans "Qishloq xo'jaligida sug'orish tizimlari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop10.webp' %});">
+            </div>
+            <h3>{% trans "Minora kranlar tizimlari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop11.webp' %});">
+            </div>
+            <h3>{% trans "Issiqlik elektr stansiyalari" %}</h3>
+          </div>
+          <div class="shop__box">
+            <div class="shop__card" style="background-image: url({% static 'images/elbim/shop12.webp' %});">
+            </div>
+            <h3>{% trans "Qora metallurgiya va tog'-kon sanoati" %}</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Shop end -->
+
+    <!--footer-sec start-->
+    <footer class="footer-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-12">
+            <div class="footer-info">
+              <div class="footer-logo"> <a href="{% url 'index' %}"><img class="footer-logo-default"
+                    src="{% static 'images/Frame 5.png' %}" alt=""> </a> </div>
+              <p>{% trans "Bizning vazifamiz - yuqori sifatli mahsulot va xizmatlarni arzon narxlarda taklif qilish
+                orqali mijozlarning ishonchini eng yuqori darajada saqlashdir." %}</p>
+              <ul class="footer-social">
+                <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-vimeo-square" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6 col-sm-6" style="display: flex; justify-content: center;">
+                <div class="footer-info">
+                  <h3 class="footer-title">{% trans "Bo'limlar" %}</h3>
+                  <ul class="service-link">
+                    <li> <a href="{% url 'index' %}">{% trans "Asosiy" %}</a> </li>
+                    <li> <a href="{% url 'about' %}">{% trans "Biz haqimizda" %}</a> </li>
+                    <li> <a href="{% url 'automation' %}">{% trans "Avtomatlashtirish" %}</a> </li>
+                    <li> <a href="{% url 'service' %}">{% trans "Services" %}</a> </li>
+                    <li> <a href="{% url 'partners' %}">{% trans "Hamkorlar" %}</a> </li>
+                    <li> <a href="{% url 'shop' %}">{% trans "Marketing" %}</a> </li>
+                    <li> <a href="{% url 'contact' %}">{% trans "Contact" %}</a> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="footer-info">
+                  <h3 class="footer-title">{% trans "Contact" %}</h3>
+                  <ul class="footer-adress">
+                    <li><i class="fa fa-map-marker"></i><span>{% trans "100005, Fergana yoli str. 222/4
+                        Tashkent/<b>Uzbekiston" %}</b></span></li>
+                    <li><i class="fa fa-phone"></i><span>{% trans "Tel: +99878 120 31 72" %}</span></li>
+                    <li><i class="fa fa-envelope-o"></i><span>{% trans "Email: erdem@elbimenergy.com" %}</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </footer>
+    <!--footer-secn end-->
+  </div>
+  <!--scroll-to-top start-->
+  <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-up"></span></div>
+  <!--scroll-to-top end-->
+
+  <!--jquery start-->
+  <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox8cbb.js?v=2.1.5' %}"></script>
+  <script src="{% static 'js/owl.carousel.js' %}"></script>
+  <script src="{% static 'rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
+  <script src="{% static 'rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+  <script src="{% static 'js/counter.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+  <!--jquery end-->
+</body>
+
+</html>
